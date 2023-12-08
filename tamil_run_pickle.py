@@ -23,10 +23,9 @@ def load_images(root_folder):
 
 
 X_test,y_test= load_images("Tamil/test")
-
-
 X_test=X_test[:,:,:,0]
 X_test=np.expand_dims(X_test, axis=-1)
+X_test = X_test / 255.0
 y_test = y_test.astype(int)
 
 print("Please wait.....")

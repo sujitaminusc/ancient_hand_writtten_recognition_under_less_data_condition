@@ -11,7 +11,7 @@ test_input = ImageDataGenerator(rescale= 1/255.0, rotation_range=10,
     fill_mode="nearest")
 
 test_image_path = "Sanskrit/sanskrit_test_data"
-train_gen = test_input.flow_from_directory(
+test_gen = test_input.flow_from_directory(
     directory=test_image_path,
     target_size=(28, 28),
     color_mode="grayscale",
@@ -26,5 +26,5 @@ best_model = load_model(model_path)
 
 best_model.load_weights(model_path)
 print("Loaded model from disk")
-score = best_model.evaluate(train_gen, verbose=0)
+score = best_model.evaluate(test_gen, verbose=0)
 print('Test accuracy percentage: ' + str(score[1] * 100) + "%")

@@ -125,11 +125,11 @@ def test(model, data, args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', default=3, type=int)
+    parser.add_argument('--epochs', default=16000, type=int)
     parser.add_argument('--verbose', default=False, type=bool)
     parser.add_argument('--cnt', default=190, type=int)
     parser.add_argument('-n', '--num_cls', default=10, type=int)
-    parser.add_argument('--batch_size', default=32, type=int)
+    parser.add_argument('--batch_size', default=1, type=int)
     parser.add_argument('--samples_to_generate', default=10, type=int)
     parser.add_argument('--lr', default=0.001, type=float)
     parser.add_argument('--lr_decay', default=0.9, type=float)

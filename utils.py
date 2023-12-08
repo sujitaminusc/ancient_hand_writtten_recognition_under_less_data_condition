@@ -4,7 +4,7 @@ from scipy import io as spio
 from keras.utils import to_categorical
 
 
-def combine_images(generated_images, height=None, width=None):
+def combine_images(generated_images, height=28, width=28):
     num_images = generated_images.shape[0]
     if width is None and height is None:
         width, height = int(math.sqrt(num_images)), int(
@@ -29,7 +29,7 @@ def combine_images(generated_images, height=None, width=None):
 
 
 def load_emnist_balanced(count, classes=47):
-    emnist = spio.loadmat("data/matlab/emnist-balanced.mat")
+    emnist = spio.loadmat("emnist-digits.mat")
     x_train, y_train, x_test, y_test = extract_data(emnist)
 
     x_train, y_train = create_balanced_dataset(x_train, y_train, count, classes)
